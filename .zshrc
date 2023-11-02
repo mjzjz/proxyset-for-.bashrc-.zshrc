@@ -5,6 +5,9 @@ COMPLETION_WAITING_DOTS="true"
 
 plugins=(git extract z autojump zsh-syntax-highlighting zsh-autosuggestions)
 
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
 export hostip=$(cat /etc/resolv.conf |grep -oP '(?<=nameserver\ ).*')
 alias proxy_on='export HTTPS_PROXY="http://${hostip}:7890";export https_proxy="http://${hostip}:7890";export HTTP_PROXY="http://${hostip}:7890";export http_proxy="http://${hostip}:7890";export all_proxy="socks5://${hostip}:7890";env|grep -i proxy;'
 alias proxy_off='unset HTTPS_PROXY;unset HTTP_PROXY;unset http_proxy;unset https_proxy;unset all_proxy;'
