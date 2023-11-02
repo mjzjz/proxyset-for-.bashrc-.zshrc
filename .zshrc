@@ -1,5 +1,8 @@
 ZSH_THEME="rkj-repos"
 
+ENABLE_CORRECTION="true"
+COMPLETION_WAITING_DOTS="true"
+
 plugins=(git extract z autojump zsh-syntax-highlighting zsh-autosuggestions)
 
 export hostip=$(cat /etc/resolv.conf |grep -oP '(?<=nameserver\ ).*')
