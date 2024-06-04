@@ -13,5 +13,11 @@ alias proxy_on='export HTTPS_PROXY="http://${hostip}:7890";export https_proxy="h
 alias proxy_off='unset HTTPS_PROXY;unset HTTP_PROXY;unset http_proxy;unset https_proxy;unset all_proxy;'
 alias proxy_show='env|grep -i proxy;'
 
+export hostip=192.168.228.1
+alias proxy_on='export HTTPS_PROXY="http://${hostip}:10811";export https_proxy="http://${hostip}:10811";export HTTP_PROXY="http://${hostip}:10811";export http_proxy="http://${hostip}:10811";export all_proxy="socks5://${hostip}:10810";env|grep -i proxy;'
+alias proxy_off='unset HTTPS_PROXY;unset HTTP_PROXY;unset http_proxy;unset https_proxy;unset all_proxy;'
+alias proxy_show='env|grep -i proxy;'
+
+
 
 wget -e "https_proxy=http://192.168.253.1:10811"
