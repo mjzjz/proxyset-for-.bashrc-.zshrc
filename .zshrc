@@ -1,3 +1,8 @@
+sudo apt update
+sudo apt install zsh
+chsh -s $(which zsh)
+sh -c "$(curl -fsSL https://install.ohmyz.sh/)"
+
 ZSH_THEME="rkj-repos"
 
 ENABLE_CORRECTION="true"
