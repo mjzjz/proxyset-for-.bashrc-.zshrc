@@ -22,6 +22,18 @@ sudo vim /etc/docker/daemon.json
 }
  sudo systemctl restart docker
 
+//代理
+sudo mkdir -p /etc/systemd/system/docker.service.d
+sudo nano /etc/systemd/system/docker.service.d/http-proxy.conf
+
+[Service]
+Environment="HTTP_PROXY=http://192.168.228.1:10811"
+Environment="HTTPS_PROXY=http://192.168.228.1:10811"
+Environment="NO_PROXY=localhost,127.0.0.1"
+
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+
   
 //使当前用户不需sudo使用docker
 sudo usermod -aG docker $(whoami)
