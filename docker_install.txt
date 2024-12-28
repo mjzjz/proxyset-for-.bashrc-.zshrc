@@ -1,0 +1,29 @@
+sudo apt update
+
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+//此处需要proxy
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+sudo apt update
+
+sudo apt install docker-ce
+//安装完成 查看docker状态
+sudo systemctl status docker
+//开机自启
+sudo systemctl enable docker
+
+//换源
+sudo vim /etc/docker/daemon.json
+
+{
+  "registry-mirrors": ["https://docker.1panelproxy.com"]
+}
+ sudo systemctl restart docker
+
+  
+//使当前用户不需sudo使用docker
+sudo usermod -aG docker $(whoami)
+//重启生效
+sudo reboot now
