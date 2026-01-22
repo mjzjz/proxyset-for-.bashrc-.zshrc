@@ -3,6 +3,8 @@ sudo apt install zsh
 chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://install.ohmyz.sh/)"
 
+export https_proxy="http://172.28.7.59:7890"
+
 ZSH_THEME="rkj-repos"
 
 ENABLE_CORRECTION="true"
